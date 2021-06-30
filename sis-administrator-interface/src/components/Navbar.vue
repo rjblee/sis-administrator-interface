@@ -7,7 +7,7 @@
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <b-collapse id="nav-collapse" is-nav>
+      <b-collapse class="nav-menu" id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item-dropdown right href="#">
             <template #button-content>
@@ -41,12 +41,17 @@
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
+        <b-navbar-nav>
           <b-nav-form>
             <b-button size="md" class="my-2 my-sm-0" type="submit"
               >New</b-button
             >
           </b-nav-form>
+          <!-- <b-nav-form>
+            <b-button size="md" class="my-2 my-sm-0" type="submit"
+              >Sign Out</b-button
+            >
+          </b-nav-form> -->
 
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
@@ -74,5 +79,9 @@ export default {
 <style scoped>
 .navbar {
   justify-content: space-between;
+}
+
+.nav-menu {
+  flex-grow: 0;
 }
 </style>
