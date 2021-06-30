@@ -1,9 +1,9 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="dark">
+    <b-navbar class="navbar" toggleable="lg" type="dark" variant="dark">
       <b-navbar-brand tag="h1" class="mb-0" href="#"
-        >Administrator Dashboard - <slot></slot
-      ></b-navbar-brand>
+        >Administrator Dashboard - <slot></slot>
+      </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -71,4 +71,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.navbar {
+  justify-content: space-between;
+}
+</style>
