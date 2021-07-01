@@ -42,7 +42,15 @@
         hover
         :items="items"
         :fields="fields"
-      ></b-table>
+      >
+        <template #cell(index)="data">
+          {{ data.index + 1 }}
+        </template>
+        <template #cell(name)="data">
+          <b class="text-info">{{ data.value.last }}</b
+          >, <b>{{ data.value.first }}</b>
+        </template>
+      </b-table>
     </div>
   </div>
 </template>
@@ -61,35 +69,51 @@ export default {
     return {
       fields: [
         // { key: "Course", sortable: true },
-        "first_name",
-        "last_name",
+        "index",
+        // "name",
+        { key: "name", label: "Full Name", sortable: true },
         "age",
         "school",
+        "course",
+        "group",
+        "division",
       ],
       items: [
         {
-          first_name: "Dickerson",
-          last_name: "Macdonald",
+          name: { first: "Tommy", last: "Miller" },
           age: 30,
           school: "Renert School",
+          course: "BEAR SAFETY AWARENESS - SK",
         },
         {
-          first_name: "Larsen",
-          last_name: "Shaw",
+          name: { first: "Lauren", last: "Braun" },
+          age: 25,
+          school: "Renert School",
+          course: "",
+        },
+        {
+          name: { first: "Jack", last: "Macdonald" },
+          age: 20,
+          school: "Renert School",
+          course: "",
+        },
+        {
+          name: { first: "Larsen", last: "Shaw" },
           age: 21,
           school: "Old Scona School",
+          course: "",
         },
         {
-          first_name: "Geneva",
-          last_name: "Wilson",
+          name: { first: "Geneva", last: "Wilson" },
           age: 18,
           school: "Webber Academy",
+          course: "",
         },
         {
-          first_name: "Jami",
-          last_name: "Carney",
+          name: { first: "Jami", last: "Carney" },
           age: 24,
           school: "Fraser Valley High",
+          course: "",
         },
       ],
     };
