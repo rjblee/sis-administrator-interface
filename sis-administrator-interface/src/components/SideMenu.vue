@@ -11,11 +11,10 @@
     >
       <template #default="{ hide }">
         <div class="p-3">
-          <!-- <h4 id="sidebar-no-header-title">Swift Learning</h4> -->
           <img
             class="side-menu-logo"
             src="../assets/Swift Learning Logo.png"
-            alt=""
+            alt="Swift Learning"
             height="100px"
           />
           <nav class="mb-3">
@@ -53,11 +52,11 @@
 
               <h5>Course Access</h5>
               <b-nav-item href="#link-1" @click="hide">
-                Assign Access
+                Assign Course Access
               </b-nav-item>
             </b-nav>
           </nav>
-          <b-button variant="primary" block @click="hide">Close</b-button>
+          <b-button variant="primary" block @click="hide">Close Menu</b-button>
         </div>
       </template>
     </b-sidebar>
