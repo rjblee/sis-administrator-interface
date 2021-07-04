@@ -95,15 +95,13 @@ export default {
           name: { first: "Jack", last: "Macdonald" },
           age: 20,
           school: "Renert School",
-          course: "ALBERTA DRIVER HOURS OF SERVICE LIMITS
-",
+          course: "ALBERTA DRIVER HOURS OF SERVICE LIMITS",
         },
         {
           name: { first: "Larsen", last: "Shaw" },
           age: 21,
           school: "Old Scona School",
-          course: "BULLYING PREVENTION
-",
+          course: "BULLYING PREVENTION",
         },
         {
           name: { first: "Geneva", last: "Wilson" },
