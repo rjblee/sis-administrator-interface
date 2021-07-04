@@ -89,31 +89,33 @@ export default {
           name: { first: "Lauren", last: "Braun" },
           age: 25,
           school: "Renert School",
-          course: "",
+          course: "ASBESTOS AWARENESS- BC",
         },
         {
           name: { first: "Jack", last: "Macdonald" },
           age: 20,
           school: "Renert School",
-          course: "",
+          course: "ALBERTA DRIVER HOURS OF SERVICE LIMITS
+",
         },
         {
           name: { first: "Larsen", last: "Shaw" },
           age: 21,
           school: "Old Scona School",
-          course: "",
+          course: "BULLYING PREVENTION
+",
         },
         {
           name: { first: "Geneva", last: "Wilson" },
           age: 18,
           school: "Webber Academy",
-          course: "",
+          course: "COLD STRESS AWARENESS",
         },
         {
           name: { first: "Jami", last: "Carney" },
           age: 24,
           school: "Fraser Valley High",
-          course: "",
+          course: "EMERGENCY RESPONSE PLANNING (ERP)",
         },
       ],
     };
