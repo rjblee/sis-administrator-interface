@@ -156,6 +156,9 @@
           head-variant="light"
           hover
           @filtered="onFiltered"
+          id="table-transition-example"
+          primary-key="index"
+          :tbody-transition-props="transProps"
         >
           <template #cell(name)="row">
             {{ row.value.first }} {{ row.value.last }}
@@ -230,6 +233,10 @@ export default {
   },
   data() {
     return {
+      transProps: {
+        // Transition name
+        name: "flip-list",
+      },
       items: [
         {
           age: 40,
@@ -372,9 +379,6 @@ export default {
 //         name: "flip-list",
 //       },
 //       fields: [
-//         // { key: "Course", sortable: true },
-//         "index",
-//         // "name",
 //         { key: "name", label: "Full Name", sortable: true },
 
 //         "age",
