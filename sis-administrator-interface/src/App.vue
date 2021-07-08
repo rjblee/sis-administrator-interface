@@ -31,6 +31,16 @@
     <div class="main-content">
       <Filter></Filter>
 
+      <div class="filter">
+        <h4>Filter By</h4>
+        <CourseModal>
+          <b-button v-b-modal.modal-scrollable>Course</b-button>
+        </CourseModal>
+        <Modal><b-button v-b-modal.modal-scrollable>Group2</b-button></Modal>
+        <Modal><b-button v-b-modal.modal-scrollable>Location</b-button></Modal>
+        <Modal><b-button v-b-modal.modal-scrollable>Date</b-button></Modal>
+      </div>
+
       <b-container fluid id="app">
         <!-- User Interface controls -->
         <b-row>
@@ -157,6 +167,7 @@
 import Navbar from "./components/Navbar.vue";
 import SideMenu from "./components/SideMenu.vue";
 import Filter from "./components/Filter.vue";
+import CourseModal from "./components/CourseModal.vue";
 
 export default {
   name: "App",
@@ -164,6 +175,7 @@ export default {
     Navbar,
     SideMenu,
     Filter,
+    CourseModal,
   },
   data() {
     return {
@@ -377,6 +389,13 @@ export default {
 
 .main-content {
   display: flex;
+}
+
+.filter {
+  border: 1px solid black;
+  width: 20%;
+  margin: 10px;
+  padding: 10px;
 }
 
 .table {
