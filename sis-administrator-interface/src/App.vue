@@ -33,12 +33,22 @@
 
       <div class="filter">
         <h4>Filter By</h4>
-        <CourseModal>
-          <b-button v-b-modal.modal-scrollable>Course</b-button>
+        <CourseModal class="modal-button">
+          <b-button variant="primary" v-b-modal.course-modal>Course</b-button>
         </CourseModal>
-        <Modal><b-button v-b-modal.modal-scrollable>Group2</b-button></Modal>
-        <Modal><b-button v-b-modal.modal-scrollable>Location</b-button></Modal>
-        <Modal><b-button v-b-modal.modal-scrollable>Date</b-button></Modal>
+        <GroupModal class="modal-button"
+          ><b-button variant="primary" v-b-modal.group-modal
+            >Group</b-button
+          ></GroupModal
+        >
+        <LocationModal class="modal-button">
+          <b-button variant="primary" v-b-modal.location-modal
+            >Location</b-button
+          >
+        </LocationModal>
+        <SchoolModal class="modal-button">
+          <b-button variant="primary" v-b-modal.school-modal>School</b-button>
+        </SchoolModal>
       </div>
 
       <b-container fluid id="app">
@@ -168,6 +178,9 @@ import Navbar from "./components/Navbar.vue";
 import SideMenu from "./components/SideMenu.vue";
 import Filter from "./components/Filter.vue";
 import CourseModal from "./components/CourseModal.vue";
+import GroupModal from "./components/GroupModal.vue";
+import LocationModal from "./components/LocationModal.vue";
+import SchoolModal from "./components/SchoolModal.vue";
 
 export default {
   name: "App",
@@ -176,6 +189,9 @@ export default {
     SideMenu,
     Filter,
     CourseModal,
+    GroupModal,
+    LocationModal,
+    SchoolModal,
   },
   data() {
     return {
@@ -395,6 +411,11 @@ export default {
   border: 1px solid black;
   width: 20%;
   margin: 10px;
+  padding: 10px;
+}
+
+.modal-button {
+  width: 100%;
   padding: 10px;
 }
 
