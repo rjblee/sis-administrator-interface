@@ -1,9 +1,12 @@
 <template>
   <div>
     <b-navbar class="navbar" toggleable="lg" type="dark" variant="dark">
-      <b-navbar-brand tag="h1" class="mb-0" href="#"
-        >Administrator Dashboard - <slot></slot>
-      </b-navbar-brand>
+      <div>
+        <b-button v-b-toggle.sidebar-no-header variant="light">Menu</b-button>
+        <b-navbar-brand tag="h1" class="mb-0" href="#"
+          >Administrator Dashboard - <slot></slot>
+        </b-navbar-brand>
+      </div>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
