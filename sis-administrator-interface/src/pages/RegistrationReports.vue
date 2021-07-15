@@ -60,9 +60,10 @@
               </b-input-group>
             </b-form-group>
           </b-col>
+
           <b-col sm="12" md="6" class="my-1">
             <b-form-group
-              label="Per page"
+              label=""
               label-for="per-page-select"
               label-cols-sm="6"
               label-cols-md="6"
@@ -123,20 +124,6 @@
             <template #cell(name)="row">
               {{ row.value.first }} {{ row.value.last }}
             </template>
-
-            <!-- Action buttons for modal and details -->
-            <!-- <template #cell(actions)="row">
-          <b-button
-            size="sm"
-            @click="info(row.item, row.index, $event.target)"
-            class="mr-1"
-          >
-            Info modal
-          </b-button>
-          <b-button size="sm" @click="row.toggleDetails">
-            {{ row.detailsShowing ? "Hide" : "Show" }} Details
-          </b-button>
-        </template> -->
 
             <template #row-details="row">
               <b-card>
