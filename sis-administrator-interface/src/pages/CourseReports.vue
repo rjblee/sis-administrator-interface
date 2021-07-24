@@ -29,10 +29,11 @@
               >Group</b-button
             ></GroupModal
           >
-          <LocationModal class="modal-button">
+          <LocationModal class="modal-button" v-on:childToParent="">
             <b-button variant="primary" v-b-modal.location-modal block
               >Location</b-button
             >
+            <span>{{ selectedLocations }}</span>
           </LocationModal>
           <SchoolModal class="modal-button">
             <b-button variant="primary" v-b-modal.school-modal block
@@ -40,11 +41,6 @@
             >
           </SchoolModal>
 
-          <AdminModal class="modal-button">
-            <b-button variant="primary" v-b-modal.admin-modal block
-              >New Admin</b-button
-            >
-          </AdminModal>
           <div>
             <DatePicker
               :selected="selectedStart"
@@ -95,6 +91,11 @@
               </b-input-group>
             </b-form-group>
           </b-col>
+          <NewAdminModal class="">
+            <b-button variant="primary" v-b-modal.admin-modal
+              >New Admin</b-button
+            >
+          </NewAdminModal>
           <b-col sm="12" md="3" class="my-1">
             <b-form-group
               label=""
@@ -228,7 +229,7 @@ import CourseModal from "../components/CourseModal.vue";
 import GroupModal from "../components/GroupModal.vue";
 import LocationModal from "../components/LocationModal.vue";
 import SchoolModal from "../components/SchoolModal.vue";
-import AdminModal from "../components/AdminModal.vue";
+import NewAdminModal from "../components/NewAdminModal.vue";
 import DatePicker from "../components/DatePicker.vue";
 import SimpleData from "../components/SimpleData.vue";
 import XLSX from "xlsx";
@@ -243,7 +244,7 @@ export default {
     GroupModal,
     LocationModal,
     SchoolModal,
-    AdminModal,
+    NewAdminModal,
     DatePicker,
     SimpleData,
   },
@@ -268,7 +269,7 @@ export default {
       sortBy: "",
       sortDesc: false,
       sortDirection: "asc",
-      filter: null,
+      filter: "",
       filterOn: [],
       groupsSelected: [],
       coursesSelected: [],
@@ -289,6 +290,7 @@ export default {
         title: "",
         content: "",
       },
+      selectedLocations: "",
     };
   },
   created() {
