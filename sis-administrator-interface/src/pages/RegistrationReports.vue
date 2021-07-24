@@ -8,11 +8,16 @@
         <h4 v-bind="items" class="simple-data">
           Total Registrations: {{ items.length }}
         </h4>
-        <SimpleData></SimpleData>
+        <SimpleData
+          specificName="Registrations"
+          :totalNumber="items.length"
+        ></SimpleData>
         <div class="filter">
           <h4>Filter By</h4>
-          <CourseModal class="modal-button">
-            <b-button variant="primary" v-b-modal.course-modal>Course</b-button>
+          <CourseModal :ident="'RegistrationC'" class="modal-button">
+            <b-button variant="primary" v-b-modal="'RegistrationC'"
+              >Course</b-button
+            >
           </CourseModal>
           <GroupModal class="modal-button"
             ><b-button variant="primary" v-b-modal.group-modal
@@ -60,10 +65,9 @@
               </b-input-group>
             </b-form-group>
           </b-col>
-
           <b-col sm="12" md="6" class="my-1">
             <b-form-group
-              label=""
+              label="Per page"
               label-for="per-page-select"
               label-cols-sm="6"
               label-cols-md="6"
@@ -124,6 +128,20 @@
             <template #cell(name)="row">
               {{ row.value.first }} {{ row.value.last }}
             </template>
+
+            <!-- Action buttons for modal and details -->
+            <!-- <template #cell(actions)="row">
+          <b-button
+            size="sm"
+            @click="info(row.item, row.index, $event.target)"
+            class="mr-1"
+          >
+            Info modal
+          </b-button>
+          <b-button size="sm" @click="row.toggleDetails">
+            {{ row.detailsShowing ? "Hide" : "Show" }} Details
+          </b-button>
+        </template> -->
 
             <template #row-details="row">
               <b-card>
@@ -225,53 +243,62 @@ export default {
       },
       items: [
         {
+          age: 40,
           name: { first: "Jackerson", last: "Macdonald" },
         },
-        { name: { first: "Larry", last: "Shall" } },
+        { age: 21, name: { first: "Larry", last: "Shall" } },
         {
+          age: 9,
           name: { first: "Mini", last: "Navarro" },
         },
-        { name: { first: "Geneva", last: "Wilson" } },
-        { name: { first: "Jamie", last: "Carson" } },
-        { name: { first: "Essie", last: "Dunlap" } },
-        { name: { first: "Thor", last: "Macdonald" } },
+        { age: 89, name: { first: "Geneva", last: "Wilson" } },
+        { age: 38, name: { first: "Jamie", last: "Carson" } },
+        { age: 27, name: { first: "Essie", last: "Dunlap" } },
+        { age: 40, name: { first: "Thor", last: "Macdonald" } },
         {
+          age: 87,
           name: { first: "Larsen", last: "Shaw" },
         },
-        { name: { first: "Mitzi", last: "Navarro" } },
+        { age: 26, name: { first: "Mitzi", last: "Navarro" } },
         {
+          age: 22,
           name: { first: "Genevieve", last: "Wilson" },
         },
-        { name: { first: "John", last: "Carney" } },
-        { name: { first: "Rick", last: "Dunlap" } },
+        { age: 38, name: { first: "John", last: "Carney" } },
+        { age: 29, name: { first: "Rick", last: "Dunlap" } },
         {
           name: { first: "Tommy", last: "Miller" },
+          age: 30,
           school: "Alberta High School of Fine Arts",
           course: "BEAR SAFETY AWARENESS - SK",
         },
         {
           name: { first: "Lauren", last: "Braun" },
+          age: 25,
           school: "Renert School",
           course: "ASBESTOS AWARENESS- BC",
         },
         {
           name: { first: "Julia", last: "Vanderwal" },
+          age: 20,
           school: "Airdrie Koinonia Christian School",
           course: "ALBERTA DRIVER HOURS OF SERVICE LIMITS",
         },
         {
           name: { first: "Larsen", last: "Shaw" },
+          age: 21,
           school: "Old Scona School",
           course: "BULLYING PREVENTION",
         },
         {
           name: { first: "Geneva", last: "Wilson" },
-
+          age: 18,
           school: "Webber Academy",
           course: "COLD STRESS AWARENESS",
         },
         {
           name: { first: "Jami", last: "Carney" },
+          age: 24,
           school: "Fraser Valley High",
           course: "EMERGENCY RESPONSE PLANNING (ERP)",
         },
@@ -306,6 +333,7 @@ export default {
       sortDirection: "asc",
       filter: null,
       filterOn: [],
+      Registration: "Registration",
       infoModal: {
         id: "info-modal",
         title: "",
